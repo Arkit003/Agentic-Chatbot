@@ -1,5 +1,0 @@
-#this file is to note y i found new today
-
-1-create the structure(seperate folders for each function)
-2-initialize the constant in a seperate uiconfigfile(or simply config file)
-    -make another uiconfigfile.py(or config.py) and import from configparser import ConfigParser
