@@ -1,4 +1,5 @@
 import streamlit as st 
+import traceback
 
 from src.langgraphagenicai.ui.streamlitui.loadui import LoadStreamlitUI
 from src.langgraphagenicai.LLMS.groq_llm import GroqLLM
@@ -23,7 +24,11 @@ def load_langgraph_agenticai_app():
         st.error("ERROR: Failed to load user input from the UI.")
         return 
     
-    user_message = st.chat_input("Enter your message:")
+    # user_message = st.chat_input("Enter your message:")
+    if st.session_state.IsFetchButtonClicked:
+        user_message=st.session_state.timeframe
+    else:
+        user_message=st.chat_input("Enter Your message:")
     
     if user_message:
         try:
@@ -46,11 +51,11 @@ def load_langgraph_agenticai_app():
                 graph=graph_builder.setup_graph(usecase=usecase)
                 DisplayResult(usecase=usecase,graph=graph,user_message=user_message).display_result_on_ui()
             except Exception as e:
-                st.error(f"Error:Graph setup failed - {e}")
+                st.error(f"Error:Graph setup failed - {traceback.format_exc()}")
                 return
             
             
             
         except Exception as e:
-            st.error(f"Error:Graph setup failed - {e}")
+            st.error(f"Error:Graph setup failed - {traceback.format_exc()}")
             return 
