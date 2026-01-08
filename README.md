@@ -48,19 +48,27 @@ Agentic-Chatbot/
 ##  Installation
 
 1. **Clone the repo**
-   ``` bash
+   ```bash
    git clone https://github.com/Arkit003/Agentic-Chatbot.git
-   cd Agentic-Chatbot ```
+   cd Agentic-Chatbot
+   ```
 
-2. ```python3 -m venv venv
-   source venv/bin/activate   # macOS / Linux
-   .\venv\Scripts\activate```    # Windows
+2.**Create and activate a virtual environment**
+   ```bash 
+      python3 -m venv venv
+      source venv/bin/activate   # macOS / Linux
+      .\venv\Scripts\activate    # Windows 
+   ```
 
-3. ```pip install -r requirements.txt```
+3.**Install dependencies** 
+ ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Running the app
-
-```streamlit run app.py```
+```bash
+   streamlit run app.py
+```
 
 
 
